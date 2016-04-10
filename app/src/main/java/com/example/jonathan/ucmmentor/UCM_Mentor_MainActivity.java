@@ -95,4 +95,10 @@ public class UCM_Mentor_MainActivity extends AppCompatActivity
         startActivity(intent);
         return true;
     }
+
+    public void gotoMentorPage(View v)
+    {
+        Intent i = new Intent(this, MentorPage.class);
+        startActivity(i);
+    }
 }
