@@ -1,5 +1,7 @@
 package com.example.jonathan.ucmmentor;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -10,6 +12,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
 public class MentorMatch extends AppCompatActivity {
+
+    private String url = "http://mentoring.ucmerced.edu/sites/mentoring.ucmerced.edu/files/documents/Matching_Docs/smp_mentor_profiles_v4.pdf";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +30,13 @@ public class MentorMatch extends AppCompatActivity {
 // Apply the adapter to the spinner
         spinner.setAdapter(adapter);
 
+    }
+
+    public void gotoSite(View v)
+    {
+        Intent website = new Intent(Intent.ACTION_VIEW);
+        website.setData(Uri.parse(url));
+        startActivity(website);
     }
 
 }

@@ -24,7 +24,7 @@ public class UCM_Mentor_MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
+        //Added Drawer menu options
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -67,6 +67,7 @@ public class UCM_Mentor_MainActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
+    //For navigation Drawer to go to other app activities
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
@@ -82,11 +83,22 @@ public class UCM_Mentor_MainActivity extends AppCompatActivity
 
         } else if (id == R.id.current) {
             intent = new Intent(this, CurrentMentors.class);
+        } else if (id == R.id.signin) {
+            intent = new Intent(this, LoginActivity.class);
+        } else if (id == R.id.contact) {
+            intent = new Intent(this, ContactUs.class);
         }
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         startActivity(intent);
         return true;
+    }
+
+    public void gotoMentorPage(View v)
+    {
+        Intent i = new Intent(this, MentorPage.class);
+        startActivity(i);
     }
 }

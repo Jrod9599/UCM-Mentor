@@ -3,6 +3,8 @@
  */
 public class Mentor extends Student {
 
+    //Skeleton test Java class for Mentor, will be replaced by Database
+
     private String name;
     private String email;
     private int maxMentees; //Maximum mentees this mentor can have
