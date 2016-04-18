@@ -79,6 +79,7 @@ public class UCM_Mentor_MainActivity extends AppCompatActivity
             intent = new Intent(this, MentorMatch.class);
 
         } else if (id == R.id.about) {
+            //intent = new Intent(this, AboutUs.class);
             intent = new Intent(this, AboutUs.class);
 
         } else if (id == R.id.current) {
