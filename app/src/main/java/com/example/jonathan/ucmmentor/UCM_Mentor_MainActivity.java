@@ -86,8 +86,10 @@ public class UCM_Mentor_MainActivity extends AppCompatActivity
             intent = new Intent(this, CurrentMentors.class);
         } else if (id == R.id.signin) {
             intent = new Intent(this, LoginActivity.class);
-        } else if (id == R.id.contact) {
+        } else if (id == R.id.contact1) {
             intent = new Intent(this, ContactUs.class);
+        } else if (id == R.id.joinSMP) {
+            intent = new Intent(this, JoinSMP.class);
         }
 
 
