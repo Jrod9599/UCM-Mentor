@@ -20,15 +20,15 @@
         android:background="@color/colorPrimary"
         android:textColor="#FFFFCC"
         android:onClick = "gotoSite"
-        android:layout_below="@+id/textView3"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="39dp"
+        android:layout_marginBottom="98dp"
         android:layout_alignParentEnd="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="The Success Mentor Program is a one-year program that provides incoming first-year students with the unique opportunity to meet an upper-division (junior or senior) mentor that has demonstrated both academic and personal success in their time as Bobcat."
+        android:text="Founded in the 2007-2008 academic year, the Success Mentor Program (SMP) empowers first-year students to make a successful transition to academic and social life at UC Merced through one-on-one mentoring with upper-division students and community-based initiatives. Success mentors support and empower first-year students to develop strategies and skills that will enhance academic, intrapersonal and interpersonal development and a sense of Bobcat pride. Through social events, skill-building activities and workshops, and other opportunities that contribute to the first-year experience, the Success Mentor Program is committed to the aspirations and success of mentees and mentors in the program."
         android:id="@+id/textView3"
         android:layout_below="@+id/textView2"
         android:layout_alignParentStart="true" />
