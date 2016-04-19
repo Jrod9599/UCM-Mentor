@@ -15,11 +15,32 @@
 
     <ImageView
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_height="wrap_content"
         android:id="@+id/imageView"
         android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
         android:src="@drawable/smp" />
 
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView2"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="51dp" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="A Commitment to Success!"
+        android:id="@+id/editText3"
+        android:layout_alignBottom="@+id/imageView2"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="53dp"
+        android:gravity="center"
+        android:textColor="#3F51B5"
+        android:textSize="27sp"
+        android:layout_centerInParent="true"
+        android:contextClickable="false" />
 </RelativeLayout>
