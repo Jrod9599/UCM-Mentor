@@ -60,6 +60,10 @@
             android:label="@string/title_activity_contact_us"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
+            android:name=".MentorPage"
+            android:label="@string/title_activity_contact_us"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name=".JoinSMP"
             android:label="@string/title_activity_join_smp"
             android:theme="@style/AppTheme.NoActionBar"></activity>
