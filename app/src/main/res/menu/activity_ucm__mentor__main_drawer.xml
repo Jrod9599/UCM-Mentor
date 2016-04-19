@@ -15,8 +15,11 @@
             android:id="@+id/signin"
             android:title="Mentor Sign-in" />
         <item
-            android:id="@+id/contact"
+            android:id="@+id/contact1"
             android:title="Contact Us" />
+        <item
+            android:id="@+id/joinSMP"
+            android:title="Join SMP" />
     </group>
 
 

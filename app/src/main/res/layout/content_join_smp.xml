@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.jonathan.ucmmentor.JoinSMP"
+    tools:showIn="@layout/activity_join_smp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/editText8"
+        android:text="Program Qualifications"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:textColor="#176cd3" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText9"
+        android:text="Who is eligible to apply:"
+        android:layout_below="@+id/editText8"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText10"
+        android:text="\n- Incoming first-year students
+        \n\n\t - If you are an incoming student who has sophomore standing, you are eligible to apply.
+
+        \n\nWho is NOT eligible to apply:
+\n\n\t- At this time the Success Mentor Program is not open to first-time transfer students.
+ \n\n\t\t- If you are an incoming transfer or a returning student check out the Degree Attainment for Returning and Transfer Scholars (DARTS) Program for more information on resources and support available to you.
+\n\n\t- Students who are a part of the Fiat Lux Scholars Program "
+        android:layout_below="@+id/editText9"
+        android:layout_alignParentStart="true" />
+</RelativeLayout>
