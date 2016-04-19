@@ -1,15 +1,27 @@
 package com.example.jonathan.ucmmentor;
 
+import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.util.ArrayList;
 
 public class MentorMatch extends AppCompatActivity {
 
@@ -22,15 +34,87 @@ public class MentorMatch extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        /*
+        //DATABASE
+        String DB_PATH = "data/data/com.example.jonathan.ucmmentor/"; // path
+        String DBNAME = "ucm_mentor.db";
+        String outFileName = DB_PATH + DBNAME;
+        try {
+            InputStream is = getAssets().open(DBNAME);
+
+            Log.d("db", "database file exists: " + is.available());
+
+
+            OutputStream myOutput = new FileOutputStream(outFileName);
+
+//transfer bytes from the inputfile to the outputfile
+            byte[] buffer = new byte[1024];
+            int length;
+            while ((length = is.read(buffer))>0){
+                myOutput.write(buffer, 0, length);
+            }
+
+//Close the streams
+            myOutput.flush();
+            myOutput.close();
+            is.close();
+            is = new FileInputStream(DB_PATH + DBNAME);
+            Log.d("db", "output database file exists: " + is.available());
+            is.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        //SQLiteDatabase db = mDBHelper.getReadableDatabase();
+        SQLiteDatabase db = SQLiteDatabase.openDatabase(DB_PATH+DBNAME, null, SQLiteDatabase.OPEN_READONLY);
+
+        ArrayList<String> arrTblNames = new ArrayList<String>();
+        Cursor c = db.rawQuery("SELECT name FROM sqlite_master WHERE type='table'", null);
+
+        if (c.moveToFirst()) {
+            while ( !c.isAfterLast() ) {
+                arrTblNames.add( c.getString( c.getColumnIndex("name")) );
+                c.moveToNext();
+            }
+        }
+
+        String[] arr = new String[arrTblNames.size()];
+        arrTblNames.toArray(arr);
+        for(int x=0; x<arrTblNames.size();x++){
+            Log.d("db", "Table " + (x+1) + " is " + arr[x]);
+        }
+        String[] projection = {
+                "m_Nickname"
+        };
+        c = db.query("Mentor", projection, null, null, null,null, null);
+
+        arrTblNames = new ArrayList<String>();
+
+        int itemId;
+        if (c.moveToFirst()) {
+            while ( !c.isAfterLast() ) {
+                arrTblNames.add( c.getString(c.getInt(
+                        c.getColumnIndexOrThrow(projection[0])
+                )) );
+                c.moveToNext();
+            }
+        }
+
+        arrTblNames.toArray(arr);
+        for(int x=0; x<arrTblNames.size();x++){
+            Log.d("db", "Name " + (x+1) + " is " + arr[x]);
+        }
+
+
+        //DATABASE
         Spinner spinner = (Spinner) findViewById(R.id.mentor_spinner);
         // Create an ArrayAdapter using the string array and a default spinner layout
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.mentor_array, android.R.layout.simple_spinner_item);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, arr);
 // Specify the layout to use when the list of choices appears
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 // Apply the adapter to the spinner
         spinner.setAdapter(adapter);
-        */
+
 
     }
 
@@ -40,5 +124,26 @@ public class MentorMatch extends AppCompatActivity {
         website.setData(Uri.parse(url));
         startActivity(website);
     }
+/*
+    private void copyDataBase() throws IOException {
+        //Open your local db as the input stream
+        InputStream myInput = myContext.getAssets().open(ucm_mentor.db);
+        // Path to the just created empty db
+        String outFileName = DB_PATH + DB_NAME;
+        //Open the empty db as the output stream
+        OutputStream myOutput = new FileOutputStream(outFileName);
+        //transfer bytes from the inputfile to the outputfile
+        byte[] buffer = new byte[1024];
+        int length;
 
-}
+        while ((length = myInput.read(buffer))>0){
+            myOutput.write(buffer, 0, length);
+        }
+
+        //Close the streams
+        myOutput.flush();
+        myOutput.close();
+        myInput.close();
+
+    }
+*/}
