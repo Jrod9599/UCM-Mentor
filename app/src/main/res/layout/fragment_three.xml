@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.jonathan.ucmmentor.ThreeFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView"
+        android:fillViewport="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/editText9"
+                android:text="Each academic year, the Success Mentor Program provides various programs and initiatives to support first-year students in their transition to life at UC Merced. With a wide range of useful and helpful topics, these initiatives are designed to foster skill development, connect students with one another and develop Bobcat pride.\n"
+                android:layout_below="@+id/editText8"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/editText10"
+                android:text="Workshops"
+                android:textColor="#176cd3"
+                android:layout_below="@+id/editText9"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/editText11"
+                android:text="The Success Mentor Program recently launched peer led workshops to provide opportunities for UC Merced undergraduates to expand their knowledge and skills academically and socially. Topics addressed at these workshops are designed to address prominent topics for students in their first year at UC Merced but the content is appropriate for all grade levels.\n"
+                android:layout_below="@+id/editText10"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/editText12"
+                android:layout_below="@+id/editText10"
+                android:text="Topics from the 2014-2015 academic year include:\n\t- A College Guide to Overcoming Homesickness\n\t- Fall into Healthy Habits\n\tMind Over Money\t\n- If Life Is Red Carpet, You Are The Start: Planning The Right Schedule For You!\n\t- Conquering Confidence\n\t- and more!\n"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/editText13"
+                android:layout_below="@+id/editText11"
+                android:text="Annual Events"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#176cd3"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/editText14"
+                android:layout_below="@+id/editText12"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Thankful Social" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/editText15"
+                android:text="Each November, during the season of giving thanks, the Success Mentor Program hosts a dinner event with great food and an opportunity to recognize the accomplishments and successes achieved in the first half of the fall semester.\n"
+                android:layout_below="@+id/editText13"
+                android:layout_alignParentStart="true" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView2"
+                android:src="@drawable/smppic"
+                android:layout_marginTop="-200dp"
+                android:layout_marginBottom="-180dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/editText16"
+                android:layout_below="@+id/editText14"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="End of Year Barbecue" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/editText17"
+                android:text="As the weather changes in late spring and the academic year comes towards a close, the Success Mentor Program hosts an annual barbecue and close out the academic year.\n"
+                android:layout_below="@+id/editText16"
+                android:layout_alignParentStart="true" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView3"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true"
+                android:src="@drawable/smpbbq"
+                android:layout_marginTop="-230dp"
+                android:layout_marginBottom="-200dp" />
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>

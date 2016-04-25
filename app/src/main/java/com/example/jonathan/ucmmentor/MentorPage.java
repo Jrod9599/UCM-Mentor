@@ -70,7 +70,7 @@ public class MentorPage extends AppCompatActivity {
             }
 
         }
-    //insert into for loop when fixed
+        //insert into for loop when fixed
         arrMentees = readMenteeDATABASE(queryMenName, arrMentees);
         arrMenEmail = readMenteeDATABASE(queryMenEmail, arrMenEmail);
         arrMenSelect = readMenteeDATABASE(queryMenChoice, arrMenSelect);
@@ -178,7 +178,7 @@ public class MentorPage extends AppCompatActivity {
         int itemId;
         if (c.moveToFirst()) {
             while (!c.isAfterLast()) {
-                    arrTblNames.add(c.getString(c.getInt(c.getColumnIndexOrThrow(projection[0]))));
+                arrTblNames.add(c.getString(c.getInt(c.getColumnIndexOrThrow(projection[0]))));
                 c.moveToNext();
             }
         }

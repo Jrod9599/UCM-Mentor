@@ -47,10 +47,10 @@ public class MentorMatch extends AppCompatActivity {
         //DATABASE
         Spinner spinner = (Spinner) findViewById(R.id.mentor_spinner);
         // Create an ArrayAdapter using the string array and a default spinner layout
-     //   ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, arr);
+        //   ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, arr);
         //CursorAdapter adapter = new CursorAdapter(this, c);
         int[] meh = {android.R.id.text1};
-    //   SimpleCursorAdapter adapter= new SimpleCursorAdapter(this, android.R.layout.simple_spinner_item, c, projection, meh,0);
+        //   SimpleCursorAdapter adapter= new SimpleCursorAdapter(this, android.R.layout.simple_spinner_item, c, projection, meh,0);
 //SimpleCursorAdapter adapter = new SimpleCursorAdapter(this, android.R.layout.simple_spinner_item, c, projection, meh);
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
@@ -135,14 +135,14 @@ public class MentorMatch extends AppCompatActivity {
 
             OutputStream myOutput = new FileOutputStream(outFileName);
 
-    //transfer bytes from the inputfile to the outputfile
+            //transfer bytes from the inputfile to the outputfile
             byte[] buffer = new byte[1024];
             int length;
             while ((length = is.read(buffer))>0){
                 myOutput.write(buffer, 0, length);
             }
 
-    //Close the streams
+            //Close the streams
             myOutput.flush();
             myOutput.close();
             is.close();
@@ -167,7 +167,7 @@ public class MentorMatch extends AppCompatActivity {
             }
         }
 
-         arr = new String[arrTblNames.size()];
+        arr = new String[arrTblNames.size()];
         arrTblNames.toArray(arr);
         for(int x=0; x<arrTblNames.size();x++){
             Log.d("db", "Table " + (x+1) + " is " + arr[x]);
@@ -194,7 +194,7 @@ public class MentorMatch extends AppCompatActivity {
             Log.d("db", "Name " + (x+1) + " is " + arr[x]);
         }
 
-    db.close();
+        db.close();
     }
 /*
     public void gotoSite(View v)

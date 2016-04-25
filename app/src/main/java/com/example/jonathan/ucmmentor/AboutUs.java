@@ -25,7 +25,7 @@ public class AboutUs extends AppCompatActivity {
 
     public void gotoSite(View v)
     {
-        String url = "http://mentoring.ucmerced.edu";
+        String url = "http://mentoring.ucmerced.edu/About";
         Intent website = new Intent(Intent.ACTION_VIEW);
         website.setData(Uri.parse(url));
         startActivity(website);

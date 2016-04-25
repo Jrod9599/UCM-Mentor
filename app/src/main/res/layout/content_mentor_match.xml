@@ -17,7 +17,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/mentor_spinner"
         android:layout_marginTop="39dp"
-        android:layout_below="@+id/menteeEmail"
+        android:layout_below="@+id/editText2"
         android:layout_alignParentStart="true" />
 
     <EditText
@@ -35,7 +35,7 @@
         android:layout_height="wrap_content"
         android:inputType="textEmailAddress"
         android:ems="10"
-        android:id="@+id/menteeEmail"
+        android:id="@+id/editText2"
         android:layout_below="@+id/editText"
         android:layout_alignParentStart="true"
         android:hint="email" />
@@ -44,18 +44,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Submit"
-        android:id="@+id/regbutton"
+        android:id="@+id/button"
         android:layout_centerVertical="true"
-        android:layout_alignParentStart="true"
-        android:onClick="registerMentor"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text=" "
-        android:id="@+id/submitFeedback"
-        android:layout_below="@+id/regbutton"
-        android:layout_alignParentStart="true"
-        android:layout_alignEnd="@+id/mentor_spinner" />
+        android:layout_alignParentStart="true" />
 </RelativeLayout>
