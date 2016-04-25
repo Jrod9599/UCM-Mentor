@@ -335,6 +335,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
             if (success) {
                 Intent i = new Intent(LoginActivity.this, MentorPage.class);
+                i.putExtra("mentorEmail",mEmailView.getText().toString());
                 startActivity(i);
             } else {
                 mPasswordView.setError(getString(R.string.error_incorrect_password));
@@ -355,6 +356,12 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     {
         Intent i = new Intent(this, MentorPage.class);
         startActivity(i);
+    }
+
+    public String getEmail()
+    {
+        return mEmailView.getText().toString();
+
     }
 }
 

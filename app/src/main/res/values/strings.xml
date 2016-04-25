@@ -47,6 +47,13 @@
     <string name="title_activity_join_smp1">JoinSMP1</string>
     <string name="title_activity_contact_us">ContactUs</string>
     <string name="title_activity_join_smp">JoinSMP</string>
+    <string name="title_activity_tabbed_about_me">TabbedAboutMe</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_main_fragment">MainFragment</string>
+    <string name="title_activity_faq">FAQ</string>
 
 
 </resources>

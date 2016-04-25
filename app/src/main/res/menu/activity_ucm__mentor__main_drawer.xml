@@ -3,14 +3,17 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/matching"
-            android:title="Mentor-Mentee Matching" />
+            android:id="@+id/mainfragment"
+            android:title="About Us" />
+        <item
+            android:id="@+id/joinSMP"
+            android:title="Join SMP" />
         <item
             android:id="@+id/current"
             android:title="Current Mentors" />
         <item
-            android:id="@+id/about"
-            android:title="About Us" />
+            android:id="@+id/matching"
+            android:title="Mentor-Mentee Matching" />
         <item
             android:id="@+id/signin"
             android:title="Mentor Sign-in" />
@@ -18,8 +21,8 @@
             android:id="@+id/contact1"
             android:title="Contact Us" />
         <item
-            android:id="@+id/joinSMP"
-            android:title="Join SMP" />
+            android:id="@+id/faq"
+            android:title="FAQs" />
     </group>
 
 

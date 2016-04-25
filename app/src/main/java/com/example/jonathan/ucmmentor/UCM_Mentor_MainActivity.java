@@ -78,18 +78,18 @@ public class UCM_Mentor_MainActivity extends AppCompatActivity
         if (id == R.id.matching) {
             intent = new Intent(this, MentorMatch.class);
 
-        } else if (id == R.id.about) {
-            //intent = new Intent(this, AboutUs.class);
-            intent = new Intent(this, AboutUs.class);
-
+        }  else if (id == R.id.mainfragment) {
+            intent = new Intent(this, MainFragment.class);
         } else if (id == R.id.current) {
             intent = new Intent(this, CurrentMentors.class);
+        } else if (id == R.id.joinSMP) {
+            intent = new Intent(this, JoinSMP.class);
         } else if (id == R.id.signin) {
             intent = new Intent(this, LoginActivity.class);
         } else if (id == R.id.contact1) {
             intent = new Intent(this, ContactUs.class);
-        } else if (id == R.id.joinSMP) {
-            intent = new Intent(this, JoinSMP.class);
+        } else if (id == R.id.faq) {
+            intent = new Intent(this, FAQ.class);
         }
 
 
