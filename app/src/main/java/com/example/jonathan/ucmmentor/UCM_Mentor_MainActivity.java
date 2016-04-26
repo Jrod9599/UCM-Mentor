@@ -80,8 +80,6 @@ public class UCM_Mentor_MainActivity extends AppCompatActivity
 
         }  else if (id == R.id.mainfragment) {
             intent = new Intent(this, MainFragment.class);
-        } else if (id == R.id.current) {
-            intent = new Intent(this, CurrentMentors.class);
         } else if (id == R.id.joinSMP) {
             intent = new Intent(this, JoinSMP.class);
         } else if (id == R.id.signin) {

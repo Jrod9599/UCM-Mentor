@@ -52,17 +52,13 @@ public class MentorPage extends AppCompatActivity {
         Intent intent = getIntent();
         String mentorEmail = intent.getStringExtra("mentorEmail");
         // mentoremail = LoginActivity.getEmail();
-        Log.d("Email is ", mentorEmail);
         arrEmail = readDATABASE(queryEmail, arrEmail);
         arrName = readDATABASE(queryName, arrName);
         arrNick = readDATABASE(queryNick, arrNick);
         for (int i = 0; i < arrEmail.length; i++) {
-            Log.d("Check Email", arrEmail[i] + " to " + mentorEmail);
-
             if (mentorEmail.equals(arrEmail[i])) {
                 MentorName = arrName[i];
                 MentorNick = arrNick[i];
-                Log.d("Mentor is", MentorName);
                 TextView mentorname = (TextView) findViewById(R.id.MentorName);
                 mentorname.setText(MentorName);
 
@@ -143,11 +139,6 @@ public class MentorPage extends AppCompatActivity {
         }
         arr = new String[arrTblNames.size()];
         arrTblNames.toArray(arr);
-        for (int x = 0; x < arrTblNames.size(); x++) {
-            Log.d("db", "Name " + (x + 1) + " is " + arr[x]);
-
-        }
-
         db.close();
         // return value;
         return arr;
@@ -184,10 +175,6 @@ public class MentorPage extends AppCompatActivity {
         }
         arr = new String[arrTblNames.size()];
         arrTblNames.toArray(arr);
-        for (int x = 0; x < arrTblNames.size(); x++) {
-            Log.d("db", "Name " + (x + 1) + " is " + arr[x]);
-
-        }
 
         db.close();
         // return value;

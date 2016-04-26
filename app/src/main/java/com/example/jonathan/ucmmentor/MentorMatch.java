@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
+import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.net.Uri;
@@ -98,35 +99,31 @@ public class MentorMatch extends AppCompatActivity {
         }
         mentee = new String[arrTblNames.size()];
         arrTblNames.toArray(mentee);
-        for(int x=0; x<arrTblNames.size();x++){
-            Log.d("db", "Mentee email " + (x+1) + " is " + mentee[x]);
-        }
-
-        Log.d("Selected", mentorNick);
 
         for(int i = 0; i < mentee.length; i++)
         {
             if(menteeEmail.equals(mentee[i]))
             {
-                Log.d("Matched", menteeEmail + " " + mentee[i]);
                 ContentValues values = new ContentValues();
                 values.put("mn_MentorNick", mentorNick);
 
                 db.update("Mentees", values, "mn_ID=" + (double) (1+i), null);
+                TextView feedback = (TextView)findViewById(R.id.submitFeedback);
+                feedback.setText("Mentor Selection Successful");
                 break;
             }
         }
 
         db.close();
 
-        TextView feedback = (TextView)findViewById(R.id.submitFeedback);
-        feedback.setText("Mentor Selection Successful");
+
 
     }
     public void readDATABASE(){
         //DATABASE
 
         String outFileName = DB_PATH + DBNAME;
+        /*
         try {
             InputStream is = getAssets().open(DBNAME);
 
@@ -147,15 +144,50 @@ public class MentorMatch extends AppCompatActivity {
             myOutput.close();
             is.close();
             is = new FileInputStream(DB_PATH + DBNAME);
-            //Log.d("db", "output database file exists: " + is.available());
+
             is.close();
 
         } catch (IOException e) {
             e.printStackTrace();
         }
+        */
 
         //SQLiteDatabase db = mDBHelper.getReadableDatabase();
-        SQLiteDatabase db = SQLiteDatabase.openDatabase(DB_PATH+DBNAME, null, SQLiteDatabase.OPEN_READONLY);
+        SQLiteDatabase db;
+        try {
+            db = SQLiteDatabase.openDatabase(DB_PATH + DBNAME, null, SQLiteDatabase.OPEN_READONLY);
+        }
+
+        catch (SQLException e) {
+            e.printStackTrace();
+            try {
+                InputStream is = getAssets().open(DBNAME);
+
+                //Log.d("db", "database file exists: " + is.available());
+
+                OutputStream myOutput = new FileOutputStream(outFileName);
+
+                //transfer bytes from the inputfile to the outputfile
+                byte[] buffer = new byte[1024];
+                int length;
+                while ((length = is.read(buffer))>0){
+                    myOutput.write(buffer, 0, length);
+                }
+
+                //Close the streams
+                myOutput.flush();
+                myOutput.close();
+                is.close();
+                is = new FileInputStream(DB_PATH + DBNAME);
+
+                is.close();
+
+            } catch (IOException e2) {
+                e2.printStackTrace();
+            }
+
+            db = SQLiteDatabase.openDatabase(DB_PATH + DBNAME, null, SQLiteDatabase.OPEN_READONLY);
+        }
 
         ArrayList<String> arrTblNames = new ArrayList<String>();
         Cursor c = db.rawQuery("SELECT name FROM sqlite_master WHERE type='table'", null);
@@ -169,9 +201,6 @@ public class MentorMatch extends AppCompatActivity {
 
         arr = new String[arrTblNames.size()];
         arrTblNames.toArray(arr);
-        for(int x=0; x<arrTblNames.size();x++){
-            Log.d("db", "Table " + (x+1) + " is " + arr[x]);
-        }
         String[] projection = {
                 "m_Nickname"
         };
@@ -190,9 +219,6 @@ public class MentorMatch extends AppCompatActivity {
         }
         arr = new String[arrTblNames.size()];
         arrTblNames.toArray(arr);
-        for(int x=0; x<arrTblNames.size();x++){
-            Log.d("db", "Name " + (x+1) + " is " + arr[x]);
-        }
 
         db.close();
     }

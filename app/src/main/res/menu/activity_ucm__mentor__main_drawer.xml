@@ -8,9 +8,7 @@
         <item
             android:id="@+id/joinSMP"
             android:title="Join SMP" />
-        <item
-            android:id="@+id/current"
-            android:title="Current Mentors" />
+
         <item
             android:id="@+id/matching"
             android:title="Mentor-Mentee Matching" />
