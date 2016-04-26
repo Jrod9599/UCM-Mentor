@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.jonathan.ucmmentor.CurrentMentors"
+    tools:showIn="@layout/activity_current_mentors">
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView2">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/editText25"
+                android:text="The 2015-2016 Success Mentor Team"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#176cd3"
+                android:gravity="center"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:id="@+id/imageView7"
+                android:src="@drawable/ardalan1"
+                android:layout_above="@+id/scrollView2"
+                android:layout_alignParentStart="true"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:id="@+id/editText8"
+                android:text="From Left to Right: Alan Ardalan, Nayhely Cazares, Sasha Datta, Jason Dorado, Yesenia Garcia, Daniela Gavilan"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                android:gravity="center" />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:id="@+id/imageView8"
+                android:src="@drawable/gimble1"
+                android:layout_above="@+id/scrollView2"
+                android:layout_alignParentStart="true"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:id="@+id/editText9"
+                android:text="From Left to Right: Stephani Gimble, Nancy Godoy, Juan Gonzalez, Mirella Gutierrez, Candace Herb, Diana Hernandez"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                android:gravity="center" />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:id="@+id/imageView9"
+                android:src="@drawable/ibarra1"
+                android:layout_above="@+id/scrollView2"
+                android:layout_alignParentStart="true"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:id="@+id/editText10"
+                android:text="From Left to Right: Cynthia Ibarra, Mayra Lazo, Yanely Lopez, Evedicia Martinez, Matt Moran, Olay Oredola"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                android:gravity="center" />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:id="@+id/imageView10"
+                android:src="@drawable/pedraza1"
+                android:layout_above="@+id/scrollView2"
+                android:layout_alignParentStart="true"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:id="@+id/editText11"
+                android:text="From Left to Right: Andrea Pedraza, Edwin Perez, Raquel Perez Zuniga, Dennise Porfirio, Roya Pourmand, Lorenzo Quiambao"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                android:gravity="center" />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:id="@+id/imageView11"
+                android:src="@drawable/rangel1"
+                android:layout_above="@+id/scrollView2"
+                android:layout_alignParentStart="true"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:id="@+id/editText12"
+                android:text="From Left to Right: Bryan Rangel, Emory Reyes, Sofia Rios-Ruiz, Gabrielle Spalard, Thu Tran, Anthony Ver"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                android:gravity="center" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

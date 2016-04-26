@@ -1,0 +1,59 @@
+<resources>
+    <string name="app_name">UCM Mentor</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_about_us">AboutUs</string>
+    <string name="title_activity_current_mentors">CurrentMentors</string>
+    <string name="title_activity_mentor_match">MentorMatch</string>
+    <string name="title_activity_login">Sign in</string>
+
+    <string-array name="mentor_array">
+        <item>Winnie the Pooh</item>
+        <item>Spider-man</item>
+        <item>Ariel</item>
+        <item>Phineas</item>
+        <item>Pikachu</item>
+        <item>Alice</item>
+        <item>Catbug</item>
+        <item>Pocoyo</item>
+        <item>Jimmy Neutron</item>
+        <item>Lilo</item>
+        <item>Bugs Bunny</item>
+        <item>Scooby Doo</item>
+        <item>Spongebob</item>
+        <item>Woody Woodpecker</item>
+        <item>Meg</item>
+        <item>Tigger</item>
+        <item>Huey Freeman</item>
+    </string-array>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="title_activity_mentor_page">MentorPage</string>
+    <string name="title_activity_become_mentor">BecomeMentor</string>
+    <string name="title_activity_join_smp1">JoinSMP1</string>
+    <string name="title_activity_contact_us">ContactUs</string>
+    <string name="title_activity_join_smp">JoinSMP</string>
+    <string name="title_activity_tabbed_about_me">TabbedAboutMe</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_main_fragment">MainFragment</string>
+    <string name="title_activity_faq">FAQ</string>
+
+
+</resources>

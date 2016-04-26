@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.jonathan.ucmmentor.FAQ"
+    tools:showIn="@layout/activity_faq">
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView2">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/editText25"
+                android:text="What is the Success Mentor Program?"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#176cd3"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:id="@+id/editText8"
+                android:text="The Success Mentor Program is a one-year program that provides incoming first-year students with the unique opportunity to meet an upper-division (junior or senior) mentor that has demonstrated both academic and personal success in their time as Bobcat.\n"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/editText26"
+                android:text="What are the requirements to be in the program?"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#176cd3"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:id="@+id/editText9"
+                android:text="Involvement in the Success Mentor Program is a one year commitment. The requirement can be found in the 'Join SMP' section.\n"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/editText27"
+                android:text="What are the benefits of being a mentee?"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#176cd3"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:id="@+id/editText10"
+                android:text="Being a part of the Success Mentor Program is full of benefits designed to help ease your transition to your new university life! These include:\n\t- Being part of a supportive community.\n\t- Getting connected to campus resources, faculty, students, and peers in the program.\n\t- Getting connected to campus life at UC Merced.\n\t- Access to exciting Success Mentor social events.\n\t- Beneficial workshops in various topics (e.g., Time Management, Connection with Community, Study Skills, etc.).\n"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/editText28"
+                android:text="What are the expectations of a mentee?"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#176cd3"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:id="@+id/editText11"
+                android:text="Students admitted into the program are expected to be motivated and proactive. Please note that admission to the program is only granted to first-year (Freshman) students.\n"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                 />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/editText29"
+                android:text="What is a success mentor and how do they help first year students?"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#176cd3"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:id="@+id/editText12"
+                android:text="Success Mentors are junior or senior students who are experienced, creative, and capable of helping first year students make the most out of their undergraduate career. Mentors frequently meet with their mentees and empower them to succeed.\n"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                 />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/editText30"
+                android:text="How are mentees assigned to a Success Mentor?"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#176cd3"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:id="@+id/editText13"
+                android:text="During the application process, mentees fill out a short questionnaire regarding their interests and hobbies. This information is then compared with mentor information to find compatibility, and a mentee-mentor match!\n"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/editText31"
+                android:text="What are the benefits of being a Success Mentor?"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#176cd3"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:id="@+id/editText14"
+                android:text="\t- Develop strong leadership skills\n\t- Expand networks with campus departments\n\t- Working collaboratively as a part of a team\n\t- Personal development (life experiences, work experiences, and more)\n\t- Flexible hours\n\t- Skill development (including communication, presentation, and more)\n"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/editText32"
+                android:text="How do you become a success mentor?"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#176cd3"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:id="@+id/editText15"
+                android:text="Recruitment for success mentors is conducted each spring semester for the coming academic year. Application requirements have shifted from year to year but commonly include the following:\n\t- Completion of an online application (including resume submission);\n\t- Completion of an online supplemental application;\n\t- Two professional letters of recommendation;\n\t- Minimum 2.75 GPA; and\n\t- Junior or senior class standing.\n"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/editText33"
+                android:text="What are the expectations of a Success Mentor?"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#176cd3"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:id="@+id/editText16"
+                android:text="The role of a success mentor is to empower, inspire, encourage and provide ongoing support to first year students. The mentoring commitment is flexible and can be tailored to the schedules and communication preferences of each mentee-mentor pair. Mentors and mentees agree on the frequency and manner in which they will communicate in an initial meeting students are to determine the best way to communicate throughout the academic year — whether that's via email, telephone, video chat, or in person. Mentors must be third or fourth year students.\n"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                />
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
