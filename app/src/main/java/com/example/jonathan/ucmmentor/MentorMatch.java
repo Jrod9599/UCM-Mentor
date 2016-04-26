@@ -196,13 +196,13 @@ public class MentorMatch extends AppCompatActivity {
 
         db.close();
     }
-/*
+
     public void gotoSite(View v)
     {
         Intent website = new Intent(Intent.ACTION_VIEW);
         website.setData(Uri.parse(url));
         startActivity(website);
     }
-*/
+
 
 }

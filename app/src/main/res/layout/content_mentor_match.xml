@@ -45,9 +45,9 @@
         android:layout_height="wrap_content"
         android:text="Submit"
         android:id="@+id/regbutton"
-        android:layout_centerVertical="true"
-        android:layout_alignParentStart="true"
-        android:onClick="registerMentor"/>
+        android:onClick="registerMentor"
+        android:layout_below="@+id/mentor_spinner"
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -58,4 +58,15 @@
         android:layout_below="@+id/regbutton"
         android:layout_alignParentStart="true"
         android:layout_alignEnd="@+id/mentor_spinner" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View Mentor List"
+        android:id="@+id/button"
+        android:layout_below="@+id/submitFeedback"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="39dp"
+        android:layout_alignParentEnd="true"
+        android:onClick="gotoSite"/>
 </RelativeLayout>
