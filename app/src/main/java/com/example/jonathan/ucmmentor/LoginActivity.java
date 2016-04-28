@@ -62,12 +62,16 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     private EditText mPasswordView;
     private View mProgressView;
     private View mLoginFormView;
+    private DatabaseLoader database;
+    private String[] mentorEmails;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         // Set up the login form.
+        database = new DatabaseLoader();
+        mentorEmails = database.mentorEmails(getApplicationContext());
         mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
         populateAutoComplete();
 
@@ -81,6 +85,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 }
                 return false;
             }
+
         });
 
         Button mEmailSignInButton = (Button) findViewById(R.id.email_sign_in_button);
@@ -193,7 +198,14 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
     private boolean isEmailValid(String email) {
         //TODO: Replace this with your own logic
-        return email.contains("@");
+        //return email.contains("@");
+        for(int i = 0; i < mentorEmails.length; i++)
+        {
+            if(email.equals(mentorEmails[i]))
+                return true;
+        }
+
+        return false;
     }
 
     private boolean isPasswordValid(String password) {

@@ -43,6 +43,7 @@ public class MentorPage extends AppCompatActivity {
         arrMentees = database.QuerieDatabase(getApplicationContext(), MentorNick, true);
 
         TextView myName = (TextView)findViewById(R.id.MentorName);
+        myName.setText(MentorName);
 
         ListView teelist = (ListView) findViewById(R.id.menteeList);
         ArrayAdapter<String> adapterName = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, arrMentees);

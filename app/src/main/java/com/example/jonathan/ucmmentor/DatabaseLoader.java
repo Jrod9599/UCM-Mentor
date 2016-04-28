@@ -114,6 +114,7 @@ public class DatabaseLoader {
         return data;
     }
 
+    //returns all mentors by nickname
     public String[] readMentors( Context context){
 
         //DATABASE
@@ -124,21 +125,8 @@ public class DatabaseLoader {
         db = SQLiteDatabase.openDatabase(DB_PATH + DBNAME, null, SQLiteDatabase.OPEN_READONLY);
 
         ArrayList<String> arrTblNames = new ArrayList<String>();
-        Cursor c = db.rawQuery("SELECT name FROM sqlite_master WHERE type='table'", null);
 
-        if (c.moveToFirst()) {
-            while ( !c.isAfterLast() ) {
-                arrTblNames.add( c.getString( c.getColumnIndex("name")) );
-                c.moveToNext();
-            }
-        }
-
-        arr = new String[arrTblNames.size()];
-        arrTblNames.toArray(arr);
-        String[] projection = {
-                "m_Nickname"
-        };
-        c = db.rawQuery("SELECT m_Nickname FROM Mentor", null);
+        Cursor c = db.rawQuery("SELECT m_Nickname FROM Mentor", null);
 
         arrTblNames = new ArrayList<String>();
 
@@ -146,11 +134,11 @@ public class DatabaseLoader {
         if (c.moveToFirst()) {
             while ( !c.isAfterLast() ) {
                 arrTblNames.add( c.getString(c.getInt(
-                        c.getColumnIndexOrThrow(projection[0])
-                )) );
+                        c.getColumnIndexOrThrow("m_Nickname"))));
                 c.moveToNext();
             }
         }
+
         arr = new String[arrTblNames.size()];
         arrTblNames.toArray(arr);
 
@@ -215,6 +203,64 @@ public class DatabaseLoader {
 
         db.close();
         return data;
+    }
+
+    public String[] mentorEmails(Context context) {
+
+        String[] arr;
+
+        checkData(context);
+        db = SQLiteDatabase.openDatabase(DB_PATH + DBNAME, null, SQLiteDatabase.OPEN_READONLY);
+
+        ArrayList<String> arrTblNames = new ArrayList<String>();
+
+        Cursor c = db.rawQuery("Select u_email FROM Users, Mentor WHERE u_ID = m_UserID", null);
+
+        arrTblNames = new ArrayList<String>();
+
+        if (c.moveToFirst()) {
+            while ( !c.isAfterLast() ) {
+                arrTblNames.add( c.getString(c.getInt(
+                        c.getColumnIndexOrThrow("u_email"))));
+                c.moveToNext();
+            }
+        }
+
+        arr = new String[arrTblNames.size()];
+        arrTblNames.toArray(arr);
+
+        db.close();
+
+        return arr;
+
+    }
+
+    public int mentorMax(Context context, String nick){
+
+        checkData(context);
+        db = SQLiteDatabase.openDatabase(DB_PATH + DBNAME, null, SQLiteDatabase.OPEN_READONLY);
+
+        String data = " ";
+        String q1 = "Select m_NumMentees FROM Mentor WHERE m_Nickname Like '" + nick +"'";
+
+        try{
+
+            Cursor c = db.rawQuery(q1 ,null);
+
+            if (c.moveToFirst()){
+                do{
+                    data = c.getString(c.getColumnIndex("m_NumMentees"));
+                }while(c.moveToNext());
+            }
+            c.close();
+
+
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+
+        db.close();
+        return Integer.parseInt(data);
     }
 
 }

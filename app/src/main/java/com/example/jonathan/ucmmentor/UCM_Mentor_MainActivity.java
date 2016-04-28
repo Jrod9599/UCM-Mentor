@@ -22,6 +22,7 @@ public class UCM_Mentor_MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         //DatabaseLoader db = new DatabaseLoader();
         //db.copyDatabase(getApplicationContext());
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ucm__mentor__main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);

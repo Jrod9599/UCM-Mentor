@@ -18,14 +18,14 @@ import android.widget.SimpleCursorAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class MentorMatch extends AppCompatActivity {
 
     private String url = "http://mentoring.ucmerced.edu/sites/mentoring.ucmerced.edu/files/documents/Matching_Docs/smp_mentor_profiles_v4.pdf";
-    String[] arr; //mentor list
-    String[] mentee;//
     String data;
+
     private String DB_PATH = "data/data/com.example.jonathan.ucmmentor/"; // path
     private String DBNAME = "ucm_mentor.db";
     @Override
@@ -37,10 +37,18 @@ public class MentorMatch extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         DatabaseLoader database = new DatabaseLoader();
-        String[] arr = database.readMentors(getApplicationContext());
+        String[] arr = database.readMentors(getApplicationContext()); //get nicknames
+        ArrayList<String> availableMentors = new ArrayList<String>();
+
+        for(int i = 0; i < arr.length; i++){
+            if(database.QuerieDatabase(getApplicationContext(),arr[i], true).length < database.mentorMax(getApplicationContext(), arr[i]))
+                availableMentors.add(arr[i]);
+        }
+
+        arr = new String[availableMentors.size()];
+        availableMentors.toArray(arr);
 
         Spinner spinner = (Spinner) findViewById(R.id.mentor_spinner);
-        int[] meh = {android.R.id.text1};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, arr);
 
             // Specify the layout to use when the list of choices appears
@@ -74,7 +82,12 @@ public class MentorMatch extends AppCompatActivity {
         db.rawQuery("UPDATE Mentees SET mn_Choice = '" + mentorNick + "' WHERE mn_ID = " + data, null );
 
         TextView text = (TextView) findViewById(R.id.submitFeedback);
-        text.setText("Mentor Selection Successful");
+
+        if(data == null)
+            text.setText("Mentee not found");
+        else
+            text.setText("Mentor Has Been Selected");
+
 
         db.close();
 
