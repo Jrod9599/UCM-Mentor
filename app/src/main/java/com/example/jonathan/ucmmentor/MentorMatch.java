@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.CursorAdapter;
@@ -35,6 +36,8 @@ public class MentorMatch extends AppCompatActivity {
         setContentView(R.layout.activity_mentor_match);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         DatabaseLoader database = new DatabaseLoader();
         String[] arr = database.readMentors(getApplicationContext()); //get nicknames
@@ -100,6 +103,17 @@ public class MentorMatch extends AppCompatActivity {
         Intent website = new Intent(Intent.ACTION_VIEW);
         website.setData(Uri.parse(url));
         startActivity(website);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
 

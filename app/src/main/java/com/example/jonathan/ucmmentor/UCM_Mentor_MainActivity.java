@@ -48,7 +48,7 @@ public class UCM_Mentor_MainActivity extends AppCompatActivity
             super.onBackPressed();
         }
     }
-
+/*
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -56,21 +56,22 @@ public class UCM_Mentor_MainActivity extends AppCompatActivity
         return true;
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+        @Override
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        public boolean onOptionsItemSelected(MenuItem item) {
+            // Handle action bar item clicks here. The action bar will
+            // automatically handle clicks on the Home/Up button, so long
+            // as you specify a parent activity in AndroidManifest.xml.
+            int id = item.getItemId();
+
+            //noinspection SimplifiableIfStatement
+            if (id == R.id.action_settings) {
+                return true;
+            }
+
+            return super.onOptionsItemSelected(item);
         }
-
-        return super.onOptionsItemSelected(item);
-    }
-
+    */
     //For navigation Drawer to go to other app activities
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
@@ -101,9 +102,4 @@ public class UCM_Mentor_MainActivity extends AppCompatActivity
         return true;
     }
 
-    public void gotoMentorPage(View v)
-    {
-        Intent i = new Intent(this, MentorPage.class);
-        startActivity(i);
-    }
 }

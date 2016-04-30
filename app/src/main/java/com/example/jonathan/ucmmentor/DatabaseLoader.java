@@ -61,8 +61,6 @@ public class DatabaseLoader {
             copyDatabase(c);
         }
 
-        db.close();
-
     }
 
 

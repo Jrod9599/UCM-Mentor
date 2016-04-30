@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -33,6 +34,8 @@ public class MentorPage extends AppCompatActivity {
         setContentView(R.layout.activity_mentor_page);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         Intent intent = getIntent();
 
         mentorEmail = intent.getStringExtra("mentorEmail");
@@ -52,6 +55,17 @@ public class MentorPage extends AppCompatActivity {
         ArrayAdapter<String> adapterEmail = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, arrMenEmail);
         emailList.setAdapter(adapterEmail);
 
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
 };
