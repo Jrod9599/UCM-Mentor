@@ -13,7 +13,7 @@
 
 
     <ImageView
-        android:src="@drawable/bobcat"
+        android:src="@drawable/smpbulb"
         android:layout_width="71dp"
         android:layout_height="63dp"
         android:id="@+id/imageView12"

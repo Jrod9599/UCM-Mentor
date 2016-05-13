@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -66,6 +67,12 @@ public class MentorPage extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void setPassword(View v){
+        Intent i = new Intent(this, PasswordActivity.class);
+        i.putExtra("mentorEmail", mentorEmail);
+        startActivity(i);
     }
 
 };

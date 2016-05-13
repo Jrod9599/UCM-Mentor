@@ -82,7 +82,11 @@ public class MentorMatch extends AppCompatActivity {
         }
         c.close();
 
-        db.rawQuery("UPDATE Mentees SET mn_Choice = '" + mentorNick + "' WHERE mn_ID = " + data, null );
+        Cursor d = db.rawQuery("UPDATE Mentees SET mn_Choice = '" + mentorNick + "' WHERE mn_ID = " + data, null );
+
+        d.moveToFirst();
+        d.close();
+        db.close();
 
         TextView text = (TextView) findViewById(R.id.submitFeedback);
 
@@ -90,10 +94,6 @@ public class MentorMatch extends AppCompatActivity {
             text.setText("Mentee not found");
         else
             text.setText("Mentor Has Been Selected");
-
-
-        db.close();
-
 
 
     }

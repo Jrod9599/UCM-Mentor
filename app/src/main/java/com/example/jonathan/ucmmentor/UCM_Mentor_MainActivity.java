@@ -20,8 +20,8 @@ public class UCM_Mentor_MainActivity extends AppCompatActivity
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        //DatabaseLoader db = new DatabaseLoader();
-        //db.copyDatabase(getApplicationContext());
+       // DatabaseLoader db = new DatabaseLoader();
+      //  db.copyDatabase(getApplicationContext());
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ucm__mentor__main);
@@ -100,6 +100,11 @@ public class UCM_Mentor_MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         startActivity(intent);
         return true;
+    }
+
+    public void onClick(View v){
+        DrawerLayout navi = (DrawerLayout)findViewById(R.id.drawer_layout);
+        navi.openDrawer(GravityCompat.START);
     }
 
 }

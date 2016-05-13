@@ -5,6 +5,10 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.TextView;
+
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -259,6 +263,59 @@ public class DatabaseLoader {
 
         db.close();
         return Integer.parseInt(data);
+    }
+
+    public void PasswordUpdate(String email, String password){
+
+        String ID = "";
+
+        SQLiteDatabase db = SQLiteDatabase.openDatabase(DB_PATH+DBNAME, null, SQLiteDatabase.OPEN_READWRITE);
+
+
+        String query1 = "Select m_ID FROM Mentor, Users WHERE u_email LIKE '" + email + "' AND u_ID = m_UserID";
+        Cursor c = db.rawQuery(query1, null);
+
+        if (c.moveToFirst()){
+            do{
+                ID = c.getString(c.getColumnIndex("m_ID"));
+       //         dbpassword = c.getString(c.getColumnIndex("Password"));
+            }while(c.moveToNext());
+        }
+        c.close();
+
+        Cursor d = db.rawQuery("UPDATE Mentor SET m_password = '" + password + "' WHERE m_ID = " + ID, null );
+
+        d.moveToFirst();
+        d.close();
+        db.close();
+    }
+
+    public boolean PasswordCheck(String email, String password){
+
+        String dbEmail = "";
+        String dbPassword = "";
+
+        SQLiteDatabase db = SQLiteDatabase.openDatabase(DB_PATH+DBNAME, null, SQLiteDatabase.OPEN_READWRITE);
+
+        String query1 = "Select m_password FROM Mentor, Users WHERE u_email LIKE '" + email + "' AND u_ID = m_UserID";
+        Cursor c = db.rawQuery(query1, null);
+
+        if (c.moveToFirst()){
+            do{
+                dbPassword = c.getString(c.getColumnIndex("m_password"));
+            }while(c.moveToNext());
+        }
+
+        c.close();
+        db.close();
+
+        if(dbPassword.equals(password))
+            return true;
+        else
+            return false;
+
+
+
     }
 
 }

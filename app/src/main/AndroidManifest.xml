@@ -66,7 +66,8 @@
         <activity
             android:name=".FAQ"
             android:label="@string/title_activity_faq"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".PasswordActivity"></activity>
     </application>
 
 </manifest> <!-- <intent-filter><action android:name = "android.intent.action.MentorMatch" /> -->

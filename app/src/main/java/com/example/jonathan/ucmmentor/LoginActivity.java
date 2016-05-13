@@ -65,6 +65,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     private View mLoginFormView;
     private DatabaseLoader database;
     private String[] mentorEmails;
+    private String email;
+    private String password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -161,15 +163,15 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         mPasswordView.setError(null);
 
         // Store values at the time of the login attempt.
-        String email = mEmailView.getText().toString();
-        String password = mPasswordView.getText().toString();
+         email = mEmailView.getText().toString();
+         password = mPasswordView.getText().toString();
 
         boolean cancel = false;
         View focusView = null;
 
         // Check for a valid password, if the user entered one.
-        if (!TextUtils.isEmpty(password) && !isPasswordValid(password)) {
-            mPasswordView.setError(getString(R.string.error_invalid_password));
+        if (!isPasswordValid(password)) {
+            mPasswordView.setError("Incorrect Password");
             focusView = mPasswordView;
             cancel = true;
         }
@@ -212,7 +214,9 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
     private boolean isPasswordValid(String password) {
         //TODO: Replace this with your own logic
-        return password.length() > 4;
+        //database = new DatabaseLoader();
+        //return database.PasswordCheck(email,password);
+        return true;
     }
 
     /**
@@ -366,11 +370,6 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
     }
 
-    public void gotoMentorPage(View v)
-    {
-        Intent i = new Intent(this, MentorPage.class);
-        startActivity(i);
-    }
 
     public String getEmail()
     {
